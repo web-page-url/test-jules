@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1a2a3a;
+    flex-direction: column;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #232949;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ff4d87;
+    clip-path: circle(150px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.card:hover:before {
+    clip-path: circle(300px at 80% -20%);
+}
+
+.card:after {
+    content: 'Virat';
+    position: absolute;
+    top: 50%;
+    left: -20%;
+    font-size: 12em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.04);
+    transform: translateY(-50%);
+}
+
+.card .imgBox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+
+.card:hover .imgBox {
+    top: 0%;
+    transform: translateY(0%);
+}
+
+.card .imgBox img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    width: 270px;
+}
+
+.card .details {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.card:hover .details {
+    height: 210px;
+}
+
+.card .details h2 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+}
+
+.card .details h2 span {
+    font-weight: 500;
+    font-size: 0.8em;
+    color: #ff4d87;
+}
+
+.card .details p {
+    color: #fff;
+    font-size: 0.9em;
+    padding: 0 20px;
+}
+
+footer {
+    margin-top: 20px;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .card:after {
+        font-size: 8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 280px;
+        height: 400px;
+    }
+    .card:after {
+        font-size: 6em;
+    }
+}
