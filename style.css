@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Great Vibes', cursive;
 }
 
 body {
@@ -12,8 +12,74 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background: #f0f2f5;
+    background: linear-gradient(to right, #ff416c, #ff4b2b);
     flex-direction: column;
+    overflow: hidden;
+}
+
+.shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.shapes div {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    animation: animate 15s linear infinite;
+}
+
+.shapes div:nth-child(1) {
+    width: 60px;
+    height: 60px;
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.shapes div:nth-child(2) {
+    width: 80px;
+    height: 80px;
+    top: 20%;
+    left: 80%;
+    animation-delay: -5s;
+}
+
+.shapes div:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    top: 70%;
+    left: 50%;
+    animation-delay: -10s;
+}
+
+.shapes div:nth-child(4) {
+    width: 40px;
+    height: 40px;
+    top: 90%;
+    left: 10%;
+    animation-delay: -2s;
+}
+
+.shapes div:nth-child(5) {
+    width: 120px;
+    height: 120px;
+    top: 50%;
+    left: 20%;
+    animation-delay: -7s;
+}
+
+@keyframes animate {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(-1000px) rotate(720deg);
+    }
 }
 
 .container {
@@ -29,110 +95,42 @@ body {
     position: relative;
     width: 320px;
     height: 450px;
-    background: #ffffff;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
-}
-
-.card:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #4d94ff;
-    clip-path: circle(150px at 80% 20%);
-    transition: 0.5s ease-in-out;
-}
-
-.card:hover:before {
-    clip-path: circle(300px at 80% -20%);
-}
-
-.card:after {
-    content: 'Virat';
-    position: absolute;
-    top: 50%;
-    left: -20%;
-    font-size: 12em;
-    font-weight: 800;
-    font-style: italic;
-    color: rgba(255, 255, 255, 0.04);
-    transform: translateY(-50%);
-}
-
-.card .imgBox {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10000;
-    width: 100%;
-    height: 220px;
-    transition: 0.5s;
-}
-
-.card:hover .imgBox {
-    top: -10%;
-    transform: translateY(0%);
-}
-
-.card .imgBox img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(0deg);
-    width: 270px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .card .details {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-    transition: 1s;
-    z-index: 10;
     padding: 20px;
-}
-
-.card:hover .details {
-    height: 210px;
+    text-align: center;
+    color: #fff;
 }
 
 .card .details h2 {
     position: relative;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #333;
-    transition: 0.5s;
-}
-
-.card:hover .details h2 {
     color: #fff;
 }
 
 .card .details h2 span {
     font-weight: 500;
     font-size: 0.8em;
-    color: #4d94ff;
+    color: #fff;
 }
 
 .card .details p {
-    color: #333;
+    color: #fff;
     font-size: 0.9em;
     padding: 0 20px;
-    transition: 0.5s;
-}
-
-.card:hover .details p {
-    color: #fff;
 }
 
 footer {
     margin-top: 20px;
-    color: #333;
+    color: #fff;
 }
 
 @media (max-width: 768px) {
